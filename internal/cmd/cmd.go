@@ -4,6 +4,7 @@ import (
 	"context"
 	"star/internal/controller/account"
 	"star/internal/controller/users"
+	"star/internal/controller/words"
 	"star/internal/logic/middleware"
 
 	"github.com/gogf/gf/v2/frame/g"
@@ -28,6 +29,7 @@ var (
 						group.Middleware(middleware.Auth)
 						group.Bind(
 							account.NewV1(),
+							words.NewV1(),
 						)
 					})
 				})

@@ -3,10 +3,12 @@ package v1
 import (
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/os/gtime"
+	"star/api"
 )
 
 type InfoReq struct {
 	g.Meta `path:"account/info" method:"get" sm:"获取信息" tags:"用户"`
+	api.AuthHeader
 }
 
 type InfoRes struct {
