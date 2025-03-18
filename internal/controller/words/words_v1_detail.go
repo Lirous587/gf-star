@@ -9,12 +9,12 @@ import (
 func (c *ControllerV1) Detail(ctx context.Context, req *v1.DetailReq) (res *v1.DetailRes, err error) {
 	uid, err := c.users.GetUid(ctx)
 	if err != nil {
-		return nil, err
+		return
 	}
 
 	word, err := c.words.Detail(ctx, uid, req.Id)
 	if err != nil {
-		return nil, err
+		return
 	}
 
 	return &v1.DetailRes{
